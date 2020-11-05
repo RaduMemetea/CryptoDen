@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms
 {
-    public interface Crypto
+    public interface ICrypto
     {
         string Encrypt(String message);
         string Decrypt(String message);

@@ -85,6 +85,29 @@
             this.label2 = new System.Windows.Forms.Label();
             this.RSADecryptButton = new System.Windows.Forms.Button();
             this.RSAEncryptButton = new System.Windows.Forms.Button();
+            this.HashPage = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.md5TextBox = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.sha1TextBox = new System.Windows.Forms.TextBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.sha256TextBox = new System.Windows.Forms.TextBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.sha384TextBox = new System.Windows.Forms.TextBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.sha512TextBox = new System.Windows.Forms.TextBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.ripemd160TextBox = new System.Windows.Forms.TextBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.TabsWindow.SuspendLayout();
             this.CaesarTab.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -119,6 +142,10 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qRSAnumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRSAnumeric)).BeginInit();
+            this.HashPage.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabsWindow
@@ -126,6 +153,7 @@
             this.TabsWindow.Controls.Add(this.CaesarTab);
             this.TabsWindow.Controls.Add(this.PlayfairTab);
             this.TabsWindow.Controls.Add(this.RSATab);
+            this.TabsWindow.Controls.Add(this.HashPage);
             this.TabsWindow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabsWindow.Location = new System.Drawing.Point(0, 0);
             this.TabsWindow.Name = "TabsWindow";
@@ -834,6 +862,266 @@
             this.RSAEncryptButton.UseVisualStyleBackColor = true;
             this.RSAEncryptButton.Click += new System.EventHandler(this.RSAEncryptButton_Click);
             // 
+            // HashPage
+            // 
+            this.HashPage.Controls.Add(this.tableLayoutPanel4);
+            this.HashPage.Location = new System.Drawing.Point(4, 22);
+            this.HashPage.Name = "HashPage";
+            this.HashPage.Padding = new System.Windows.Forms.Padding(3);
+            this.HashPage.Size = new System.Drawing.Size(870, 529);
+            this.HashPage.TabIndex = 3;
+            this.HashPage.Text = "Hash";
+            this.HashPage.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.button1, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.groupBox10, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.groupBox11, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 3;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 175F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(864, 523);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(764, 482);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 38);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Generate";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.checkBox6);
+            this.groupBox10.Controls.Add(this.ripemd160TextBox);
+            this.groupBox10.Controls.Add(this.checkBox5);
+            this.groupBox10.Controls.Add(this.sha512TextBox);
+            this.groupBox10.Controls.Add(this.checkBox4);
+            this.groupBox10.Controls.Add(this.sha384TextBox);
+            this.groupBox10.Controls.Add(this.checkBox3);
+            this.groupBox10.Controls.Add(this.sha256TextBox);
+            this.groupBox10.Controls.Add(this.checkBox2);
+            this.groupBox10.Controls.Add(this.sha1TextBox);
+            this.groupBox10.Controls.Add(this.checkBox1);
+            this.groupBox10.Controls.Add(this.md5TextBox);
+            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox10.Location = new System.Drawing.Point(0, 304);
+            this.groupBox10.Margin = new System.Windows.Forms.Padding(0);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Padding = new System.Windows.Forms.Padding(0);
+            this.groupBox10.Size = new System.Drawing.Size(864, 175);
+            this.groupBox10.TabIndex = 1;
+            this.groupBox10.TabStop = false;
+            // 
+            // md5TextBox
+            // 
+            this.md5TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.md5TextBox.Location = new System.Drawing.Point(91, 16);
+            this.md5TextBox.Name = "md5TextBox";
+            this.md5TextBox.ReadOnly = true;
+            this.md5TextBox.Size = new System.Drawing.Size(768, 20);
+            this.md5TextBox.TabIndex = 1;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(5, 18);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(49, 17);
+            this.checkBox1.TabIndex = 2;
+            this.checkBox1.Text = "MD5";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(5, 44);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(54, 17);
+            this.checkBox2.TabIndex = 4;
+            this.checkBox2.Text = "SHA1";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // sha1TextBox
+            // 
+            this.sha1TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sha1TextBox.Location = new System.Drawing.Point(91, 42);
+            this.sha1TextBox.Name = "sha1TextBox";
+            this.sha1TextBox.ReadOnly = true;
+            this.sha1TextBox.Size = new System.Drawing.Size(768, 20);
+            this.sha1TextBox.TabIndex = 3;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(5, 70);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(66, 17);
+            this.checkBox3.TabIndex = 6;
+            this.checkBox3.Text = "SHA256";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // sha256TextBox
+            // 
+            this.sha256TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sha256TextBox.Location = new System.Drawing.Point(91, 68);
+            this.sha256TextBox.Name = "sha256TextBox";
+            this.sha256TextBox.ReadOnly = true;
+            this.sha256TextBox.Size = new System.Drawing.Size(768, 20);
+            this.sha256TextBox.TabIndex = 5;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(5, 96);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(66, 17);
+            this.checkBox4.TabIndex = 8;
+            this.checkBox4.Text = "SHA384";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // sha384TextBox
+            // 
+            this.sha384TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sha384TextBox.Location = new System.Drawing.Point(91, 94);
+            this.sha384TextBox.Name = "sha384TextBox";
+            this.sha384TextBox.ReadOnly = true;
+            this.sha384TextBox.Size = new System.Drawing.Size(768, 20);
+            this.sha384TextBox.TabIndex = 7;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(5, 122);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(66, 17);
+            this.checkBox5.TabIndex = 10;
+            this.checkBox5.Text = "SHA512";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // sha512TextBox
+            // 
+            this.sha512TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sha512TextBox.Location = new System.Drawing.Point(91, 120);
+            this.sha512TextBox.Name = "sha512TextBox";
+            this.sha512TextBox.ReadOnly = true;
+            this.sha512TextBox.Size = new System.Drawing.Size(768, 20);
+            this.sha512TextBox.TabIndex = 9;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(5, 148);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(86, 17);
+            this.checkBox6.TabIndex = 12;
+            this.checkBox6.Text = "RIPEMD160";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // ripemd160TextBox
+            // 
+            this.ripemd160TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ripemd160TextBox.Location = new System.Drawing.Point(91, 146);
+            this.ripemd160TextBox.Name = "ripemd160TextBox";
+            this.ripemd160TextBox.ReadOnly = true;
+            this.ripemd160TextBox.Size = new System.Drawing.Size(768, 20);
+            this.ripemd160TextBox.TabIndex = 11;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.textBox2);
+            this.groupBox11.Controls.Add(this.radioButton2);
+            this.groupBox11.Controls.Add(this.button2);
+            this.groupBox11.Controls.Add(this.textBox1);
+            this.groupBox11.Controls.Add(this.radioButton1);
+            this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox11.Location = new System.Drawing.Point(0, 0);
+            this.groupBox11.Margin = new System.Windows.Forms.Padding(0);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Padding = new System.Windows.Forms.Padding(0);
+            this.groupBox11.Size = new System.Drawing.Size(864, 304);
+            this.groupBox11.TabIndex = 2;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Input";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(5, 279);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(43, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Fille";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(91, 278);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(689, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Enabled = false;
+            this.button2.Location = new System.Drawing.Point(784, 276);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Browse";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(5, 16);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(46, 17);
+            this.radioButton2.TabIndex = 3;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Text";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.Location = new System.Drawing.Point(91, 15);
+            this.textBox2.MaxLength = 999999999;
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(768, 255);
+            this.textBox2.TabIndex = 4;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -893,6 +1181,12 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qRSAnumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRSAnumeric)).EndInit();
+            this.HashPage.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -956,5 +1250,28 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button RSADecryptButton;
         private System.Windows.Forms.Button RSAEncryptButton;
+        private System.Windows.Forms.TabPage HashPage;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.TextBox ripemd160TextBox;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.TextBox sha512TextBox;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.TextBox sha384TextBox;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.TextBox sha256TextBox;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.TextBox sha1TextBox;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox md5TextBox;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

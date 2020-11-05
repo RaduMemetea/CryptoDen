@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Algorithms
 {
-    public class Playfair : Crypto
+    public class Playfair : ICrypto
     {
         private string Key;
         private List<char> Alphabet = new List<char>();

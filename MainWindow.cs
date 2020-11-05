@@ -35,7 +35,7 @@ namespace CryptoDen
             if (CaesarNormalText.TextLength > 0)
                 CaesarEncryptedText.Text = Caesar.Value.Encrypt(CaesarNormalText.Text);
 
-            CaesarKeyBox.Text = Caesar.Value.GetKeys();
+            CaesarKeyBox.Text = Caesar.Value.Key;
             CaesarAlphabetBox.Text = Caesar.Value.GetAlphabet();
 
         }
@@ -56,7 +56,7 @@ namespace CryptoDen
         private void CaesarKeyButton_Click(object sender, EventArgs e)
         {
             Caesar = new Lazy<Caesar>(() => new Caesar(Convert.ToInt32(CaesarShiftNumberBox.Value)));
-            CaesarKeyBox.Text = Caesar.Value.GetKeys();
+            CaesarKeyBox.Text = Caesar.Value.Key;
             CaesarAlphabetBox.Text = Caesar.Value.GetAlphabet();
         }
 
@@ -182,8 +182,7 @@ namespace CryptoDen
             }
         }
 
+
         #endregion
-
-
     }
 }

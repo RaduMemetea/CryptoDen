@@ -3,7 +3,7 @@ using System.Numerics;
 
 namespace Algorithms
 {
-    public class RSA: Crypto
+    public class RSA: ICrypto
     {
         private Tuple<long, long> PublicKey;
         private Tuple<long, long> PrivateKey;

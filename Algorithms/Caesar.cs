@@ -1,16 +1,21 @@
-﻿using Algorithms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Algorithms
 {
-    class Caesar:Crypto
+    class Caesar : ICrypto
     {
-        private string Key;
+        public string Key
+        {
+            get { return Key; }
+            set
+            {
+                Key = value.ToLowerInvariant();
+                ConstructAlphabet();
+            }
+        }
+
         private List<char> Alphabet;
         private int Shift;
 
@@ -20,7 +25,7 @@ namespace Algorithms
             Key = key;
             ConstructAlphabet();
         }
-        public Caesar(int shift=0)
+        public Caesar(int shift = 0)
         {
             string key = "";
             Random r = new Random();
@@ -31,15 +36,6 @@ namespace Algorithms
             Key = key;
             ConstructAlphabet();
 
-        }
-        public string GetKeys()
-        {
-            return Key;
-        }
-        public void ModifyKey(string key)
-        {
-            Key = key.ToLowerInvariant();
-            ConstructAlphabet();
         }
 
         private void ConstructAlphabet()
@@ -120,7 +116,7 @@ namespace Algorithms
             string alphabet = "";
             foreach (var item in Alphabet)
                 alphabet += $"{item} ";
-            
+
             return alphabet;
         }
     }

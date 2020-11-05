@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithms\Caesar.cs" />
-    <Compile Include="Algorithms\Crypto.cs" />
+    <Compile Include="Algorithms\ICrypto.cs" />
     <Compile Include="Algorithms\Playfair.cs" />
     <Compile Include="Algorithms\RSA.cs" />
     <Compile Include="MainWindow.cs">
