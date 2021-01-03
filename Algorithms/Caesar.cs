@@ -4,38 +4,34 @@ using System.Linq;
 
 namespace Algorithms
 {
-    class Caesar : ICrypto
+    class Caesar
     {
-        public string Key
-        {
-            get { return Key; }
-            set
-            {
-                Key = value.ToLowerInvariant();
-                ConstructAlphabet();
-            }
-        }
-
+        private string Key;
         private List<char> Alphabet;
         private int Shift;
 
-        public Caesar(int shift, string key)
+        public Caesar(int shift = 0, string key = "")
         {
             Shift = shift;
-            Key = key;
+
+            if (key != null)
+                Key = key.ToLowerInvariant();
+            else
+                Key = "";
+
             ConstructAlphabet();
         }
-        public Caesar(int shift = 0)
+
+        public void GenerateRandomKey()
         {
             string key = "";
             Random r = new Random();
+
             for (int i = 0; i < 10; i++)
-            {
                 key += (char)r.Next((int)'a', (int)'z');
-            }
+
             Key = key;
             ConstructAlphabet();
-
         }
 
         private void ConstructAlphabet()
@@ -45,6 +41,7 @@ namespace Algorithms
             foreach (var item in Key)// add key unique letters to the list
             {
                 if (!IsLetter(item)) continue;
+
                 if (!Alphabet.Contains(item))
                     Alphabet.Add(item);
             }

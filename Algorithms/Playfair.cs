@@ -3,39 +3,36 @@ using System.Collections.Generic;
 
 namespace Algorithms
 {
-    public class Playfair : ICrypto
+    public class Playfair
     {
         private string Key;
+
         private List<char> Alphabet = new List<char>();
         private char[,] Matrix = new char[5, 5];
 
         public Playfair(string key = "")
         {
-            Key = key.ToLowerInvariant();
+            if (key != null)
+                Key = key.ToLowerInvariant();
+            else
+                Key = "";
             ConstructAlphabetAndMatrix();
+
         }
 
-        public Playfair()
+        public void GenerateRandomKey()
         {
             string key = "";
             Random r = new Random();
+
             for (int i = 0; i < 10; i++)
-            {
                 key += (char)r.Next((int)'a', (int)'z');
-            }
+
             Key = key;
             ConstructAlphabetAndMatrix();
+
         }
 
-        public void ModifyKey(string key)
-        {
-            Key = key.ToLowerInvariant();
-            ConstructAlphabetAndMatrix();
-        }
-        public string GetKeys()
-        {
-            return Key;
-        }
 
         internal string GetMatrix()
         {
@@ -43,8 +40,8 @@ namespace Algorithms
             for (int i = 0; i < Matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < Matrix.GetLength(1); j++)
-                   matrix += String.Format("{0} ", Matrix[i, j]);
-                
+                    matrix += String.Format("{0} ", Matrix[i, j]);
+
                 matrix += "\r\n";
             }
             return matrix;
@@ -139,7 +136,7 @@ namespace Algorithms
                     cord1 = Matrix.CoordinatesOf(message[i]);   // find coordonates for the first letter in the group 
                 else
                     cord1 = Matrix.CoordinatesOf('i');
-                
+
                 i++;                                        // move the index to the next wanted letter
                 if (i >= message.Length) break;
 
