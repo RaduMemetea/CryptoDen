@@ -38,7 +38,7 @@ namespace CryptoDen
             this.RSAKeySize = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.genKeyButton = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.rsaSettings = new System.Windows.Forms.GroupBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.rsaPublicText = new System.Windows.Forms.TextBox();
@@ -78,7 +78,7 @@ namespace CryptoDen
             this.Crypt.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.rsaSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -158,7 +158,7 @@ namespace CryptoDen
             this.groupBox1.Controls.Add(this.RSAKeySize);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.genKeyButton);
-            this.groupBox1.Controls.Add(this.groupBox4);
+            this.groupBox1.Controls.Add(this.rsaSettings);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.string25Key);
             this.groupBox1.Controls.Add(this.label7);
@@ -209,16 +209,16 @@ namespace CryptoDen
             this.genKeyButton.UseVisualStyleBackColor = true;
             this.genKeyButton.Click += new System.EventHandler(this.genKeyButton_Click);
             // 
-            // groupBox4
+            // rsaSettings
             // 
-            this.groupBox4.Controls.Add(this.splitContainer1);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox4.Location = new System.Drawing.Point(3, 219);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(196, 384);
-            this.groupBox4.TabIndex = 7;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "RSA keys";
+            this.rsaSettings.Controls.Add(this.splitContainer1);
+            this.rsaSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rsaSettings.Location = new System.Drawing.Point(3, 219);
+            this.rsaSettings.Name = "rsaSettings";
+            this.rsaSettings.Size = new System.Drawing.Size(196, 384);
+            this.rsaSettings.TabIndex = 7;
+            this.rsaSettings.TabStop = false;
+            this.rsaSettings.Text = "RSA keys";
             // 
             // splitContainer1
             // 
@@ -353,6 +353,7 @@ namespace CryptoDen
             this.AlgorithmSelect.Name = "AlgorithmSelect";
             this.AlgorithmSelect.Size = new System.Drawing.Size(196, 23);
             this.AlgorithmSelect.TabIndex = 0;
+            this.AlgorithmSelect.SelectedIndexChanged += new System.EventHandler(this.AlgorithmSelect_SelectedIndexChanged);
             // 
             // tabPage2
             // 
@@ -607,7 +608,7 @@ namespace CryptoDen
             this.tableLayoutPanel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
+            this.rsaSettings.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -666,7 +667,7 @@ namespace CryptoDen
         private System.Windows.Forms.NumericUpDown caesarShift;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox string25Key;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox rsaSettings;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox rsaPublicText;

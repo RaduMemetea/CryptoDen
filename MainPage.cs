@@ -21,7 +21,9 @@ namespace CryptoDen
             RSAKeySize.Items.Add(RSA.KeySize.Key2048);
             RSAKeySize.Items.Add(RSA.KeySize.Key4096);
 
+            MakeAllSettingsInvisible();
             RSAKeySize.SelectedIndex = 0;
+            AlgorithmSelect_SelectedIndexChanged(null, null);
         }
 
         private void EncryptButton_Click(object sender, EventArgs e)
@@ -77,18 +79,10 @@ namespace CryptoDen
                 case 1:
                     var playfaire = new Playfair(string25Key.Text);
                     NormalText.Text = playfaire.Decrypt(EncryptedText.Text);
-
                     break;
 
                 case 2:
-                    RSA rsa;
-
-                    rsa = new RSA(rsaPublicText.Text, rsaPrivateText.Text);
-
-                    rsaPublicText.Text = rsa.Keys.PublicKey;
-                    rsaPrivateText.Text = rsa.Keys.PrivateKey;
-
-
+                    var rsa = new RSA(rsaPublicText.Text, rsaPrivateText.Text);
                     NormalText.Text = rsa.Decrypt(EncryptedText.Text);
                     break;
 
@@ -120,6 +114,42 @@ namespace CryptoDen
                 default:
                     break;
             }
+        }
+
+        private void AlgorithmSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (AlgorithmSelect.SelectedIndex)
+            {
+                case 0:
+                    MakeAllSettingsInvisible();
+                    MakeControlsVisible(new Control[] { label7, label8, caesarShift, string25Key });
+                    break;
+
+                case 1:
+                    MakeAllSettingsInvisible();
+                    MakeControlsVisible(new Control[] { label8, string25Key });
+                    break;
+
+                case 2:
+                    MakeAllSettingsInvisible();
+                    MakeControlsVisible(new Control[] { label9, RSAKeySize, rsaSettings });
+                    break;
+
+
+            }
+        }
+
+        private void MakeAllSettingsInvisible()
+        {
+            Control[] list = { label7, label8, label9, caesarShift, string25Key, RSAKeySize, rsaSettings };
+            foreach (var item in list)
+                item.Visible = false;
+
+        }
+        private void MakeControlsVisible(Control[] controls)
+        {
+            foreach (var item in controls)
+                item.Visible = true;
         }
     }
 }
