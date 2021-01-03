@@ -20,7 +20,7 @@ namespace Algorithms
 
         }
 
-        public void GenerateRandomKey()
+        public string GenerateRandomKey()
         {
             string key = "";
             Random r = new Random();
@@ -31,6 +31,7 @@ namespace Algorithms
             Key = key;
             ConstructAlphabetAndMatrix();
 
+            return Key;
         }
 
 

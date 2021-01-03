@@ -22,7 +22,7 @@ namespace Algorithms
             ConstructAlphabet();
         }
 
-        public void GenerateRandomKey()
+        public string GenerateRandomKey()
         {
             string key = "";
             Random r = new Random();
@@ -32,6 +32,7 @@ namespace Algorithms
 
             Key = key;
             ConstructAlphabet();
+            return Key;
         }
 
         private void ConstructAlphabet()

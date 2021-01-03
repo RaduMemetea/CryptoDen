@@ -1,5 +1,5 @@
 ﻿
-namespace Crypto_Den
+namespace CryptoDen
 {
     partial class MainPage
     {
@@ -207,6 +207,7 @@ namespace Crypto_Den
             this.genKeyButton.TabIndex = 8;
             this.genKeyButton.Text = "Generate Key";
             this.genKeyButton.UseVisualStyleBackColor = true;
+            this.genKeyButton.Click += new System.EventHandler(this.genKeyButton_Click);
             // 
             // groupBox4
             // 

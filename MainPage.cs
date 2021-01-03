@@ -52,6 +52,8 @@ namespace CryptoDen
                     rsaPrivateText.Text = rsa.Keys.PrivateKey;
 
 
+                    EncryptedText.Text = rsa.Encrypt(NormalText.Text);
+
                     break;
 
 
@@ -79,7 +81,39 @@ namespace CryptoDen
                     break;
 
                 case 2:
+                    RSA rsa;
 
+                    rsa = new RSA(rsaPublicText.Text, rsaPrivateText.Text);
+
+                    rsaPublicText.Text = rsa.Keys.PublicKey;
+                    rsaPrivateText.Text = rsa.Keys.PrivateKey;
+
+
+                    NormalText.Text = rsa.Decrypt(EncryptedText.Text);
+                    break;
+
+
+                default:
+                    break;
+            }
+        }
+
+        private void genKeyButton_Click(object sender, EventArgs e)
+        {
+            switch (AlgorithmSelect.SelectedIndex)
+            {
+                case 0:
+                    string25Key.Text = new Caesar().GenerateRandomKey();
+                    break;
+
+                case 1:
+                    string25Key.Text = new Playfair().GenerateRandomKey();
+                    break;
+
+                case 2:
+                    var rsa = new RSA((RSA.KeySize)RSAKeySize.SelectedItem);
+                    rsaPublicText.Text = rsa.Keys.PublicKey;
+                    rsaPrivateText.Text = rsa.Keys.PrivateKey;
                     break;
 
 
