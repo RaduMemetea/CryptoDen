@@ -6,7 +6,7 @@ Aceasta aplicatie este folosita pentru a cripta date folosind diferiti algoritmi
 
 Pentru partea de criptare sunt disponibili trei algoritmi:
 
-1. Caesar (cu siftare si cheie)
+1. Caesar (cu shiftare si cheie)
 2. Playfaire
 3. RSA
 
