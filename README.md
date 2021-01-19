@@ -45,3 +45,4 @@ Observatii:
 * Inputul pentru aplicatie trebuie sa fie sub forma UTF8
 * Pentru algoritmul RSA inputul nu poate fi mai mare decat [ ((marime cheie - 384)/8 )+7 ]
 * Pentru cheile pentru algoritmii Caesar si Playfair exista o limita de 25 de caractere
+* Marimea maxima pentru fisiere este 100MB
