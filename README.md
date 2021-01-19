@@ -1,28 +1,47 @@
 # CryptoDen
 
-Aceasta aplicatie ne ajuta in primul rand, sa criptam un text prin mai multe metode de criptare un anumit sir de caractere. Metodele sunt:
-- Caesar 
-- Playfaire
-- RSA
-Aceasta aplicatie ne ajuta in al doilea rand, sa hash-uim un anumit text si sa-l criptam prin anumite functii criptografice.
------------------------------------------------------------------------------------------------------------------------------------------------------
-Caseta din stanga este destinata textelor normale, necriptate, iar cea din dreapta afiseaza textul criptat.
-In dropbox-ul de la setari se poate alege programul de criptare dorit.
-Fiecare algoritm vine cu propriile setari. 
-Pentru algoritmul Caesar trebuie specificat shiftul dorit, iar generarea cheii se face automat, aceasta fiind folosita atat pentru criptare cat si pentru decriptare.
-Algoritmul Playfaire foloseste setari asemanatoare si de asemenea generarea cheii se face automat la apasareabutonului "Generate Key".
-Pentru algoritmul RSA se poate alege marimea cheii prin meniul drop-down "Key size".
-In caseta Public se regaseste cheia publica, iar in cea privata se regaseste cheia privata. 
-Pentru o descriere mai amanuntita a algoritmilor de criptare, vedeti doc.pdf
-----------------------------------------------------------------------------------------------------------------------------------------------------
-Prin acesta parte de hash criptam caractere sau text prin diferite metode de criptare. Scriem ce avem nevoie in casuta de input iar apoi vom apasa butonul de generate. Aceasta actiune ne va da ca rezultat afisarea unor caractere in casutele celor 5 metode de criptare. 
-In aceasta sectiune de Hash avem doua parti: 
-- Input:
-unde punem testul nostru sau daca adaugam un document de pe computerul nostru accesand butonul de Browse
-- Output
-unde va genera 5 tipuri de criptare:
+Aceasta aplicatie este folosita pentru a cripta date folosind diferiti algoritmi sau pentru a calcula hash-ul unui text sau fisier. Ambele functii bazandu-se pe ideea ca input-ul va fi in foramt UTF8.
+
+---
+
+Pentru partea de criptare sunt disponibili trei algoritmi:
+
+1. Caesar (cu siftare si cheie)
+2. Playfaire
+3. RSA
+
+---
+
+Pentru partea de calculare a hash-urilor sunt implementate cinci algoritmi:
+
 - MD5 
-- SHA
+- SHA1
 - SHA256
 - SHA384
 - SHA512
+
+---
+
+Pe pagina "Crypt" se regasesc doua casete de text; caseta din stanga va contine testul normal iar cea din drapta il va contine pe cel criptat.
+Pentru a selecta algoritmul de criptare si ai putea accesa optiunile este necesara selectarea acestuia din casuta de tip dropdown.
+
+In urma actionarii butonului "Encrypt" se va prela textul din caseta stanga, va fi procesat folosind algoritmul selectat si setarile aferente vizibile urmand ca textul criptat sa fie afisat in caseta din dreapta.
+
+In urma actionarii butonului "Decrypt" se va prela textul din caseta dreapta, va fi procesat folosind algoritmul selectat si setarile aferente vizibile urmand ca textul decriptat sa fie afisat in caseta din stanga.
+
+Folosind butonul "Generate Key" se va genera o cheie random de 10 caractere pentru primi doi algoritmi; pentru algoritmul RSA acesta va genera cheia publica si privata criptate folosind Base64. Cheile generate vor contine la inceput marimea cheii urmate de un caracter delimitator si cele doua numere necesare algoritmului serializate folosind XML.
+
+---
+
+Pagina "Hash" este inpartita in doua parti: partea de input si partea de output. 
+
+In zona de input datele pot fi introduse manual sau preluate dintr-un fisier.
+Dupa ce metoda de introducere a datelor a fost selectata, se poate actiona butonul "Generate" pentru a se calcula hash-urile pentru inputul primit.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Observatii:
+
+* Inputul pentru aplicatie trebuie sa fie sub forma UTF8
+* Pentru algoritmul RSA inputul nu poate fi mai mare decat [ ((marime cheie - 384)/8 )+7 ]
+* Pentru cheile pentru algoritmii Caesar si Playfair exista o limita de 25 de caractere
