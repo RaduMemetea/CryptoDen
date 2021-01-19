@@ -54,26 +54,25 @@ namespace CryptoDen
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.HashInputTextBox = new System.Windows.Forms.TextBox();
             this.BrowseButton = new System.Windows.Forms.Button();
-            this.textBox = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.fileTextBox = new System.Windows.Forms.TextBox();
+            this.fileRadio = new System.Windows.Forms.RadioButton();
+            this.textRadio = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.sha512TextBox = new System.Windows.Forms.TextBox();
+            this.sha384TextBox = new System.Windows.Forms.TextBox();
+            this.sha256TextBox = new System.Windows.Forms.TextBox();
+            this.sha1TextBox = new System.Windows.Forms.TextBox();
+            this.md5TextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.GenerateHashButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.Tabs.SuspendLayout();
             this.Crypt.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -371,7 +370,7 @@ namespace CryptoDen
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.groupBox2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.groupBox3, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.button4, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.GenerateHashButton, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -384,11 +383,11 @@ namespace CryptoDen
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.HashInputTextBox);
             this.groupBox2.Controls.Add(this.BrowseButton);
-            this.groupBox2.Controls.Add(this.textBox);
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.fileTextBox);
+            this.groupBox2.Controls.Add(this.fileRadio);
+            this.groupBox2.Controls.Add(this.textRadio);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
@@ -397,66 +396,67 @@ namespace CryptoDen
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Input";
             // 
-            // textBox3
+            // HashInputTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(59, 23);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PlaceholderText = "Insert text here";
-            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox3.Size = new System.Drawing.Size(939, 264);
-            this.textBox3.TabIndex = 4;
+            this.HashInputTextBox.Location = new System.Drawing.Point(59, 23);
+            this.HashInputTextBox.Multiline = true;
+            this.HashInputTextBox.Name = "HashInputTextBox";
+            this.HashInputTextBox.PlaceholderText = "Insert text here";
+            this.HashInputTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.HashInputTextBox.Size = new System.Drawing.Size(939, 264);
+            this.HashInputTextBox.TabIndex = 4;
             // 
             // BrowseButton
             // 
+            this.BrowseButton.Enabled = false;
             this.BrowseButton.Location = new System.Drawing.Point(923, 293);
             this.BrowseButton.Name = "BrowseButton";
             this.BrowseButton.Size = new System.Drawing.Size(75, 25);
             this.BrowseButton.TabIndex = 3;
             this.BrowseButton.Text = "Browse";
             this.BrowseButton.UseVisualStyleBackColor = true;
+            this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
             // 
-            // textBox
+            // fileTextBox
             // 
-            this.textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.fileTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox.Location = new System.Drawing.Point(59, 293);
-            this.textBox.Name = "textBox";
-            this.textBox.ReadOnly = true;
-            this.textBox.Size = new System.Drawing.Size(858, 23);
-            this.textBox.TabIndex = 2;
+            this.fileTextBox.Location = new System.Drawing.Point(59, 293);
+            this.fileTextBox.Name = "fileTextBox";
+            this.fileTextBox.ReadOnly = true;
+            this.fileTextBox.Size = new System.Drawing.Size(858, 23);
+            this.fileTextBox.TabIndex = 2;
             // 
-            // radioButton2
+            // fileRadio
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(7, 294);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(46, 19);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "Fille";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.fileRadio.AutoSize = true;
+            this.fileRadio.Location = new System.Drawing.Point(7, 294);
+            this.fileRadio.Name = "fileRadio";
+            this.fileRadio.Size = new System.Drawing.Size(43, 19);
+            this.fileRadio.TabIndex = 1;
+            this.fileRadio.Text = "File";
+            this.fileRadio.UseVisualStyleBackColor = true;
+            this.fileRadio.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // radioButton1
+            // textRadio
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 23);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(46, 19);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Text";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.textRadio.AutoSize = true;
+            this.textRadio.Checked = true;
+            this.textRadio.Location = new System.Drawing.Point(7, 23);
+            this.textRadio.Name = "textRadio";
+            this.textRadio.Size = new System.Drawing.Size(46, 19);
+            this.textRadio.TabIndex = 0;
+            this.textRadio.TabStop = true;
+            this.textRadio.Text = "Text";
+            this.textRadio.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox8);
-            this.groupBox3.Controls.Add(this.textBox7);
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Controls.Add(this.textBox5);
-            this.groupBox3.Controls.Add(this.textBox4);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.sha512TextBox);
+            this.groupBox3.Controls.Add(this.sha384TextBox);
+            this.groupBox3.Controls.Add(this.sha256TextBox);
+            this.groupBox3.Controls.Add(this.sha1TextBox);
+            this.groupBox3.Controls.Add(this.md5TextBox);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label3);
@@ -469,73 +469,55 @@ namespace CryptoDen
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             // 
-            // textBox8
+            // sha512TextBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(90, 165);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBox8.Size = new System.Drawing.Size(908, 23);
-            this.textBox8.TabIndex = 11;
+            this.sha512TextBox.Location = new System.Drawing.Point(90, 136);
+            this.sha512TextBox.Name = "sha512TextBox";
+            this.sha512TextBox.ReadOnly = true;
+            this.sha512TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.sha512TextBox.Size = new System.Drawing.Size(908, 23);
+            this.sha512TextBox.TabIndex = 10;
             // 
-            // textBox7
+            // sha384TextBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(90, 136);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBox7.Size = new System.Drawing.Size(908, 23);
-            this.textBox7.TabIndex = 10;
+            this.sha384TextBox.Location = new System.Drawing.Point(90, 107);
+            this.sha384TextBox.Name = "sha384TextBox";
+            this.sha384TextBox.ReadOnly = true;
+            this.sha384TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.sha384TextBox.Size = new System.Drawing.Size(908, 23);
+            this.sha384TextBox.TabIndex = 9;
             // 
-            // textBox6
+            // sha256TextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(90, 107);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBox6.Size = new System.Drawing.Size(908, 23);
-            this.textBox6.TabIndex = 9;
+            this.sha256TextBox.Location = new System.Drawing.Point(90, 78);
+            this.sha256TextBox.Name = "sha256TextBox";
+            this.sha256TextBox.ReadOnly = true;
+            this.sha256TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.sha256TextBox.Size = new System.Drawing.Size(908, 23);
+            this.sha256TextBox.TabIndex = 8;
             // 
-            // textBox5
+            // sha1TextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(90, 78);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBox5.Size = new System.Drawing.Size(908, 23);
-            this.textBox5.TabIndex = 8;
+            this.sha1TextBox.Location = new System.Drawing.Point(90, 49);
+            this.sha1TextBox.Name = "sha1TextBox";
+            this.sha1TextBox.ReadOnly = true;
+            this.sha1TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.sha1TextBox.Size = new System.Drawing.Size(908, 23);
+            this.sha1TextBox.TabIndex = 7;
             // 
-            // textBox4
+            // md5TextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(90, 49);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBox4.Size = new System.Drawing.Size(908, 23);
-            this.textBox4.TabIndex = 7;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(90, 20);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBox2.Size = new System.Drawing.Size(908, 23);
-            this.textBox2.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(2, 168);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 15);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "RIPEMD160:";
+            this.md5TextBox.Location = new System.Drawing.Point(90, 20);
+            this.md5TextBox.Name = "md5TextBox";
+            this.md5TextBox.ReadOnly = true;
+            this.md5TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.md5TextBox.Size = new System.Drawing.Size(908, 23);
+            this.md5TextBox.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(2, 139);
+            this.label5.Location = new System.Drawing.Point(7, 139);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 15);
             this.label5.TabIndex = 4;
@@ -544,7 +526,7 @@ namespace CryptoDen
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(2, 110);
+            this.label4.Location = new System.Drawing.Point(7, 110);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 15);
             this.label4.TabIndex = 3;
@@ -557,7 +539,7 @@ namespace CryptoDen
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 15);
             this.label3.TabIndex = 2;
-            this.label3.Text = "SHA128:";
+            this.label3.Text = "SHA256:";
             // 
             // label2
             // 
@@ -577,14 +559,15 @@ namespace CryptoDen
             this.label1.TabIndex = 0;
             this.label1.Text = "MD5:";
             // 
-            // button4
+            // GenerateHashButton
             // 
-            this.button4.Location = new System.Drawing.Point(3, 553);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(139, 48);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Generate";
-            this.button4.UseVisualStyleBackColor = true;
+            this.GenerateHashButton.Location = new System.Drawing.Point(3, 553);
+            this.GenerateHashButton.Name = "GenerateHashButton";
+            this.GenerateHashButton.Size = new System.Drawing.Size(139, 48);
+            this.GenerateHashButton.TabIndex = 2;
+            this.GenerateHashButton.Text = "Generate";
+            this.GenerateHashButton.UseVisualStyleBackColor = true;
+            this.GenerateHashButton.Click += new System.EventHandler(this.GenerateHashButton_Click);
             // 
             // textBox1
             // 
@@ -593,6 +576,10 @@ namespace CryptoDen
             this.textBox1.Size = new System.Drawing.Size(100, 23);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "textBox1";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // MainPage
             // 
@@ -641,25 +628,23 @@ namespace CryptoDen
         private System.Windows.Forms.Button genKeyButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox HashInputTextBox;
         private System.Windows.Forms.Button BrowseButton;
-        private System.Windows.Forms.TextBox textBox;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.TextBox fileTextBox;
+        private System.Windows.Forms.RadioButton fileRadio;
+        private System.Windows.Forms.RadioButton textRadio;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox sha512TextBox;
+        private System.Windows.Forms.TextBox sha384TextBox;
+        private System.Windows.Forms.TextBox sha256TextBox;
+        private System.Windows.Forms.TextBox sha1TextBox;
+        private System.Windows.Forms.TextBox md5TextBox;
+        private System.Windows.Forms.Button GenerateHashButton;
         private System.Windows.Forms.Button DecryptButton;
         private System.Windows.Forms.Button EncryptButton;
         private System.Windows.Forms.ComboBox AlgorithmSelect;
@@ -675,5 +660,6 @@ namespace CryptoDen
         private System.Windows.Forms.TextBox rsaPrivateText;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox RSAKeySize;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
